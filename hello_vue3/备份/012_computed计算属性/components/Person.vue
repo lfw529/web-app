@@ -32,6 +32,7 @@
     },
     // 当fullName被修改时，set调用，且会收到修改的值
     set(val){
+      // 解构赋值 str1,str2
       const [str1,str2] = val.split('-')
       firstName.value = str1
       lastName.value = str2
