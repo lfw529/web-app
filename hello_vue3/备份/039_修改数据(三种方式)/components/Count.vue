@@ -29,7 +29,7 @@
     // 第二种修改方式
     /* countStore.$patch({
       sum:888,
-      school:'尚硅谷',
+      school:'lfw',
       address:'北京'
     }) */
 
