@@ -1,6 +1,11 @@
+// 引入defineStore用于创建store
 import {defineStore} from 'pinia'
 
+// 定义并暴露一个store
 export const useTalkStore = defineStore('talk',{
+  // 动作
+  actions:{},
+
   // 真正存储数据的地方
   state(){
     return {
@@ -10,5 +15,8 @@ export const useTalkStore = defineStore('talk',{
         {id:'ftrfasdf03',title:'心里给你留了一块地，我的死心塌地'}
       ]
     }
-  }
+  },
+
+  // 计算
+  getters:{}
 })
