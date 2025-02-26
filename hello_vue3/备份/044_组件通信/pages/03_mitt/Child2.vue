@@ -16,6 +16,7 @@
 	// 给emitter绑定send-toy事件
 	emitter.on('send-toy',(value:any)=>{
 		toy.value = value
+    console.log('被调用', value);
 	})
 	// 在组件卸载时解绑send-toy事件
 	onUnmounted(()=>{

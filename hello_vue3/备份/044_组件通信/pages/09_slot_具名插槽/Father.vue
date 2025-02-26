@@ -14,6 +14,7 @@
       </Category>
 
       <Category>
+        <!-- 按名称进入对应插槽 -->
         <template v-slot:s2>
           <img :src="imgUrl" alt="">
         </template>
@@ -23,9 +24,11 @@
       </Category>
 
       <Category>
+        <!-- #s2 为 v-slot:s2 的缩写形式 -->
         <template #s2>
           <video video :src="videoUrl" controls></video>
         </template>
+        <!-- #s1 为 v-slot:s1 的缩写形式 -->
         <template #s1>
           <h2>今日影视推荐</h2>
         </template>
