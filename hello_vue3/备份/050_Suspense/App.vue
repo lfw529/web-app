@@ -1,27 +1,30 @@
 <template>
-  <div class="app">
-    <h2>我是App组件</h2>
-    <Suspense>
-      <template v-slot:default>
-        <Child/>
-      </template>
-      <!-- <template v-slot:fallback> -->
-        <!-- <h2>加载中......</h2> -->
-      <!-- </template> -->
-    </Suspense>
-  </div>
+	<div class="app">
+		<h3>我是App组件</h3>
+		<Suspense>
+			<template v-slot:default>
+				<Child/>
+			</template>
+			<template v-slot:fallback>
+				<h3>稍等，加载中...</h3>
+			</template>
+		</Suspense>
+	</div>
 </template>
 
-<script setup lang="ts" name="App">
-  import {Suspense} from 'vue'
-  import Child from './Child.vue'
+<script>
+	// import Child from './components/Child'//静态引入
+	import {defineAsyncComponent} from 'vue' 
+	const Child = defineAsyncComponent(()=>import('./components/Child.vue')) //异步引入
+	export default {
+		name:'App',
+		components:{Child},
+	}
 </script>
 
 <style>
-  .app {
-    background-color: #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 0 10px;
-  }
+	.app{
+		background-color: gray;
+		padding: 10px;
+	}
 </style>
